@@ -1,8 +1,8 @@
 function generaRandom(){
-    var r = Math.round(Math.random());
-    for(let i=1; i < 10; i++){
-        var a = Math.floor(Math.random()*i);
-        r = a + "\n" + r;
-        document.getElementById("myText").innerHTML = r;
-    }
+   var myArray = [];
+   for(var i=0; i < 10; i++){
+       var a = Math.floor(Math.random()*10);
+       myArray.push(a);
+   }
+   document.getElementById("myText").innerHTML = myArray.join();
 }
