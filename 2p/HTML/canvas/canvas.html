@@ -1,0 +1,15 @@
+<!DOCTYPE html><html>
+<body>
+<p> Before canvas </p>
+<canvas widht = "120" height = "60"></canvas>
+<p> After canvas </p>
+</body>
+
+<script>
+let canvas = document.querySelector("canvas");
+let context = canvas.getContext("2d");
+context.fillStyle = "red";
+context.fillRect(10,10,50);
+</script>
+
+</html>

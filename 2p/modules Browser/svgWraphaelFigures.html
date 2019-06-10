@@ -1,0 +1,45 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<body>
+<div id="my-svg"></div>   
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js"></script>
+<script src="../../libs/ylrm/geometry/Point.js"></script>
+<script src="../../libs/ylrm/geometry/useCircle.js"></script>
+<script src="../../libs/ylrm/geometry/useLine.js"></script>
+<script src="../../libs/ylrm/geometry/useRectangle.js"></script>
+<script src="../../libs/ylrm/geometry/useSquare.js"></script>
+<script src="../../libs/ylrm/geometry/useTriangle.js"></script>
+
+<script>
+var punto = new Point(250,200);
+var punto2 = new Point(50,100);
+var punto3 = new Point(150,70);
+var punto4 = new Point(50,200);
+
+var circulo = new Circle(punto,40);
+var triangulo = new Triangle(punto, punto2, punto3);
+var rectangulo = new Rectangle(punto, punto2);
+var linea = new Line(punto, punto4);
+var cuadrado = new Square(punto2, 50);
+
+var paper = Raphael (document.getElementById('my-svg'), 600, 400);
+
+var rect = paper.rect (0,0,600,400);
+//rect.attr('fill','#FFF');
+
+var myCircle = paper.circle(circulo.p1.x, circulo.p1.y, circulo.r);
+
+var myTriangle = paper.path(`M${triangulo.p1.x},${triangulo.p1.y},L${triangulo.p2.x},${triangulo.p2.y},L${triangulo.p3.x},${triangulo.p3.y},L${triangulo.p1.x},${triangulo.p1.y}`);
+
+var myRectangle = paper.rect(rectangulo.p1.x, rectangulo.p1.y, rectangulo.p2.x, rectangulo.p2.y);
+
+var mySquare = paper.rect(cuadrado.p1.x, cuadrado.p1.y, cuadrado.l, cuadrado.l);
+
+var myLine = paper.path(`M${linea.p1.x},${linea.p1.y},L${linea.p2.x},${linea.p2.y}`);
+//myLine.attr('stroke','red');
+
+</script>
+</html>
